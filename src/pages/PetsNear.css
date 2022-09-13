@@ -1,0 +1,21 @@
+.root{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 900px) {
+    .card_conteiner{
+    display:grid;
+    grid-template-columns: auto auto auto;
+    gap: 30px;
+}    
+  }
+.p{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #B3B0AC;
+}

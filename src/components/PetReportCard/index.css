@@ -1,0 +1,124 @@
+.overlay {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  z-index: 2;
+
+}
+.popup {
+  margin: 70px auto;
+  padding: 20px; 
+  position: relative; 
+  transition: all 5s ease-in-out;
+  width: 300px;
+  background: #FFF8ED;
+  border-radius: 14px;
+  display: flex;
+}
+ 
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  cursor: pointer;
+  color: #000;
+}
+.popup .content {
+  overflow: auto;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+}
+ 
+.textArea{
+  width: 260px;
+  height: 120px;
+  background: #F2E5CF;
+  border: 1px solid #F19F1F;
+  border-radius: 14px;
+  padding: 10px;
+}
+
+.h3{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  color: #F19F1F;
+  margin: 20px auto;
+}
+
+.label{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  color: #F19F1F;
+  display: flex;
+  flex-direction: column;
+}
+
+.input{
+  width: 260px;
+  height: 40px;
+  background: #F2E5CF;
+  border: 1px solid #F19F1F;
+  border-radius: 14px;
+  margin: 5px 0;
+  padding: 10px;
+}
+
+.button{
+  width: 260px;
+  height: 40px;
+  background: #EF5030;
+  border-radius: 14px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.p{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #F19F1F;
+}
+
+.box{
+  margin: 20px auto;
+}

@@ -1,0 +1,16 @@
+
+.map_container {
+    margin: 10px 0;
+    width: 335px;
+    height: 228px;
+    border-radius: 14px;
+    }
+
+.span{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    color: #F19F1F;
+}

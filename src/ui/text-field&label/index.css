@@ -1,0 +1,33 @@
+.root{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+}
+.label{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    color: #F19F1F;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input{
+    width: 340px;
+    height: 50px;
+    border: 1px solid #F19F1F;
+    border-radius: 14px;
+    margin: 5px 0;
+    padding: 10px;
+  }
+
+  .textArea{
+    width: 340px;
+    height: 120px;
+    border: 1px solid #F19F1F;
+    border-radius: 14px;
+    padding: 10px;
+  }
