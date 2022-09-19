@@ -29,7 +29,8 @@ export function LoginForm(){
           icon: "error",
           width:300,
           confirmButtonColor:"#108896"
-         })}else if (token !== undefined){ 
+         })
+        }else if (token !== undefined){ 
          navigate("/",{replace:true})
       }
   },[token])
@@ -44,7 +45,7 @@ export function LoginForm(){
     }  
     
   return (
-    <div className={css.root}>
+    <div>
         <form className={css.form} onSubmit={handleSubmit}>
             <TextField type="email" name="email" placeholder={"Introduce tu email"}/>
             <TextFieldPassword error={error} name="password" autocomplete="off" placeholder={"Introduce tu contraseña"}/>

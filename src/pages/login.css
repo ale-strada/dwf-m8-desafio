@@ -1,3 +1,7 @@
+html, body {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
 .root{
     margin: 60px;
     display: flex;

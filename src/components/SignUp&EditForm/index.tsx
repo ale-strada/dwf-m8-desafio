@@ -62,7 +62,7 @@ function handleChangeEmail(e){
   }
 
   return (
-    <div className={css.root}>
+    <div>
         <form className={css.form} onSubmit={handleSubmit}>
             <TextField onChange = {handleChangeName} value={fullName} type="fullName" name="fullName" placeholder={"Introduce tu nombre"} />
             <TextField onChange = {handleChangeEmail} value={email}  type="email" name="email" placeholder={"Introduce tu email"}/>
