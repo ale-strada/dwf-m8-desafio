@@ -26,7 +26,10 @@ function handleSubmit(e){
     const fullName = e.target.fullName.value
     const password = e.target.password.value
     const passwordconfirm = e.target.passwordconfirm.value
-        if (password === passwordconfirm)  {
+    if(email && fullName && password){
+      console.log(email, fullName, password);
+      
+       if (password === passwordconfirm)  {
             const user = {fullName,email,password}
             if(token){
               updateUser(userData, token)
@@ -52,6 +55,15 @@ function handleSubmit(e){
             confirmButtonColor:"#108896"
            })            
         }
+    } else {
+      MySwal.fire({
+        title: <Alert>Falta llenar algunos campos</Alert>,
+        icon: "warning",
+        width:300,
+        confirmButtonColor:"#108896"
+       })            
+    }
+       
     }  
     
 function handleChangeName(e){

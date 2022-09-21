@@ -51,6 +51,13 @@ export function PostPet(){
            }).then(()=>{
             navigate("/mypets",{replace:true})
            })
+        } else {
+            MySwal.fire({
+                title: <Alert>La informacion no esta completa.</Alert>,
+                icon: "error",
+                width:300,
+                confirmButtonColor:"#108896",
+               })
         }
     }
     return <div className={css.root}>

@@ -60,6 +60,15 @@
   padding: 10px;
 }
 
+.textArea_error{
+  width: 260px;
+  height: 120px;
+  background: #F2E5CF;
+  border: 1px solid #FF0101;
+  border-radius: 14px;
+  padding: 10px;
+}
+
 .h3{
   font-family: 'Roboto';
   font-style: normal;
@@ -89,6 +98,17 @@
   border-radius: 14px;
   margin: 5px 0;
   padding: 10px;
+}
+
+.input_error{
+  width: 260px;
+  height: 40px;
+  background: #F2E5CF;
+  border: 1px solid #FF0101;
+  border-radius: 14px;
+  margin: 5px 0;
+  padding: 10px;
+
 }
 
 .button{
@@ -121,4 +141,14 @@
 
 .box{
   margin: 20px auto;
+}
+
+.span{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #FF0101;
+
 }
