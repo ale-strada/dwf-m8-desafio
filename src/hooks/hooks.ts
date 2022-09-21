@@ -157,7 +157,7 @@ export async function signup(newUserData) {
   return data;
 }
 
-export async function updateUser(userData, token) {
+export async function updateUser(userData, token, id) {
   const res = await fetch("https://dwf-m7-final.herokuapp.com/me/update", {
     method: "post",
     headers: {
@@ -165,7 +165,7 @@ export async function updateUser(userData, token) {
       Authorization: "bearer " + token,
     },
     body: JSON.stringify({
-      userId: userData.id,
+      userId: id,
       email: userData.email,
       fullName: userData.fullName,
       password: userData.password,
