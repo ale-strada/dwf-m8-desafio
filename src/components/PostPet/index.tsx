@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Mapa } from "ui/Map";
 import { ButonColores, FormButton } from "ui/Buttons"
 import { TextFieldLabel } from "ui/text-field&label"
@@ -20,8 +20,11 @@ export function PostPet(){
     const navigate = useNavigate()
     const [petLoc, setPetLoc] = useRecoilState(petGeoLocState)
     const [pictureURL, setPictreURL] = useRecoilState(pictureURLState)
-    
+
+    const [submited, setSubmited] = useState(false)
     function handleClickUbicacion(){
+       
+        setSubmited(false)
         navigator.geolocation.getCurrentPosition(p=>{
             const userLoc = [p.coords.latitude,p.coords.longitude]
             navigate("/post/"+ userLoc,{replace:true}) 
@@ -30,6 +33,7 @@ export function PostPet(){
   
     function handleSubmit(e){
         e.preventDefault()
+        setSubmited (true)
         const petData = {
             petName:e.target.petName.value,
             ubication:e.target.ubication.value,
@@ -40,8 +44,8 @@ export function PostPet(){
             email:user.email
         }
         
-        if(petData.lat && petData.petName && petData.pictureURL && petData.ubication){
-
+        if(submited){
+          if(petData.lat && petData.petName && petData.pictureURL && petData.ubication){
         postPet(petData, token).then((pet)=>{setPetEdit(pet)})
         MySwal.fire({
             title: <Alert>Mascota Publicada</Alert>,
@@ -58,7 +62,10 @@ export function PostPet(){
                 width:300,
                 confirmButtonColor:"#108896",
                })
+        }  
+        }else{console.log("falsee");
         }
+        
     }
     return <div className={css.root}>
                 <form onSubmit={handleSubmit} className={css.form}>
