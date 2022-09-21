@@ -21,7 +21,7 @@ export function PostPet(){
     const [petLoc, setPetLoc] = useRecoilState(petGeoLocState)
     const [pictureURL, setPictreURL] = useRecoilState(pictureURLState)
 
-    const [submited, setSubmited] = useState(false)
+    const [submited, setSubmited] = useState(true)
     function handleClickUbicacion(){
        
         setSubmited(false)
@@ -63,7 +63,6 @@ export function PostPet(){
                 confirmButtonColor:"#108896",
                })
         }  
-        }else{console.log("falsee");
         }
         
     }
