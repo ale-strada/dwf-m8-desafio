@@ -6,12 +6,14 @@ import { useSearchPets } from "hooks/hooks"
 
 function PetsNear () {
 const findPets = useSearchPets() 
+console.log(findPets);
+
 const TitleNo = "No hay mascotas perdidas cerca tuyo"
 const TitleSi = "Mascotas perdidas cerca tuyo"
 
   return (
     <div className={css.root}>
-      <Title>{findPets? TitleSi : TitleNo}</Title>
+      <Title>{findPets[0]? TitleSi : TitleNo}</Title>
       <p className={css.p}>Radio de 2km</p>
       <div className={css.card_conteiner}>
        {findPets.map(p=>(
