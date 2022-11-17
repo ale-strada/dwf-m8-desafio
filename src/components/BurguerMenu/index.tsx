@@ -77,15 +77,15 @@ const menuStyle = displayMenu? {display:"inherit"}:{display:""}
             <div className={css.header__menuopcionescontainer}>  
               <div className={css.header__menuopcion}>
                 <IconoMisDatos/>
-                <a onClick= {handleClickMisDatos}className={css.header__menuopcion_link}>Mis Datos</a>
+                <a onClick= {handleClickMisDatos}className={css.header__menuopcion_link} >Mis Datos</a>
               </div>
               <div className={css.header__menuopcion}>
                 <IconoMisMascotas/>
-                <a onClick= {handleClickMisMascotas} className={css.header__menuopcion_link}>Mis Mascotas</a>
+                <a onClick= {handleClickMisMascotas} className={css.header__menuopcion_link} href="">Mis Mascotas</a>
               </div>
               <div className={css.header__menuopcion}>
                 <IconoReportar/>
-                <a onClick= {handleClickReportar} className={css.header__menuopcion_link}>Reportar</a>
+                <a onClick= {handleClickReportar} className={css.header__menuopcion_link} href="">Reportar</a>
               </div>
             </div>   
             <div className={css.header__user_menu}>
