@@ -4,13 +4,11 @@ import{MainButton} from "../ui/Buttons"
 import { Perrito } from "img/perrito"
 import css from "./home.css"
 import {useNavigate} from "react-router-dom"
-import { loadLocalToken, useUserState } from "hooks/hooks"
 
 function Home () {   
  const navigate = useNavigate()
 
   function handleClick (){
-  
   navigator.geolocation.getCurrentPosition(p=>{
     const userLoc = [p.coords.latitude,p.coords.longitude]
     navigate("/mascotas/"+ userLoc,{replace:true}) 
