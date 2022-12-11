@@ -3,7 +3,7 @@ import { atom, selector, useRecoilState, useRecoilValue } from "recoil";
 import { tokenState } from "./hooks";
 
 export async function postPet(petData, token) {
-  const res = await fetch("https://dwf-m7-final.herokuapp.com/pets", {
+  const res = await fetch("https://pet-finder-app.onrender.com/pets", {
     method: "post",
     headers: {
       "content-type": "application/json",
@@ -26,7 +26,7 @@ export async function postPet(petData, token) {
 
 export async function editPet(petData, token) {
   const res = await fetch(
-    "https://dwf-m7-final.herokuapp.com/pets/" + petData.id,
+    "https://pet-finder-app.onrender.com/pets/" + petData.id,
     {
       method: "put",
       headers: {
@@ -48,7 +48,7 @@ export async function editPet(petData, token) {
 }
 
 export async function getPetById(id, token) {
-  const res = await fetch("https://dwf-m7-final.herokuapp.com/pets/" + id, {
+  const res = await fetch("https://pet-finder-app.onrender.com/pets/" + id, {
     method: "get",
     headers: {
       "content-type": "application/json",
@@ -81,7 +81,7 @@ export const myPetsState = selector({
     const editedPet = get(petEditState);
     const token = get(tokenState);
     if (token) {
-      const res = await fetch("https://dwf-m7-final.herokuapp.com/pets/me", {
+      const res = await fetch("https://pet-finder-app.onrender.com/pets/me", {
         headers: {
           "content-type": "application/json",
           Authorization: "bearer " + token,

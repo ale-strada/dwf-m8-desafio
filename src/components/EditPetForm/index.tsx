@@ -31,6 +31,7 @@ export function EditPetForm(){
             const userLoc = [p.coords.latitude,p.coords.longitude]
             navigate("/edit/"+ userLoc,{replace:true}) 
           })
+          
     }
   
     function handleSubmit(e){

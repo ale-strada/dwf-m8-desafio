@@ -15,7 +15,7 @@ const petsResultsState = selector({
     const editedPet = get(petEditState);
     if (geoLoc) {
       const res = await fetch(
-        "https://dwf-m7-final.herokuapp.com/pets/cerca-de?" + geoLoc
+        "https://pet-finder-app.onrender.com/pets/cerca-de?" + geoLoc
       );
       const data = await res.json();
       return data;
@@ -65,16 +65,19 @@ export const getUserToken = selector({
   get: async ({ get }) => {
     const userLogin: any = get(userLoginState);
     if (userLogin.email) {
-      const res = await fetch("https://dwf-m7-final.herokuapp.com/auth/token", {
-        method: "post",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({
-          email: userLogin.email,
-          password: userLogin.password,
-        }),
-      });
+      const res = await fetch(
+        "https://pet-finder-app.onrender.com/auth/token",
+        {
+          method: "post",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            email: userLogin.email,
+            password: userLogin.password,
+          }),
+        }
+      );
       const data = await res.json();
       return data;
     }
@@ -114,7 +117,7 @@ export const userDataState = selector({
     const token = get(tokenState);
     const user = get(userState);
     if (token) {
-      const res = await fetch("https://dwf-m7-final.herokuapp.com/me", {
+      const res = await fetch("https://pet-finder-app.onrender.com/me", {
         headers: {
           "content-type": "application/json",
           Authorization: "bearer " + token,
@@ -142,7 +145,7 @@ export function useUserState() {
 }
 
 export async function signup(newUserData) {
-  const res = await fetch("https://dwf-m7-final.herokuapp.com/auth", {
+  const res = await fetch("https://pet-finder-app.onrender.com/auth", {
     method: "post",
     headers: {
       "content-type": "application/json",
@@ -158,7 +161,7 @@ export async function signup(newUserData) {
 }
 
 export async function updateUser(userData, token, id) {
-  const res = await fetch("https://dwf-m7-final.herokuapp.com/me/update", {
+  const res = await fetch("https://pet-finder-app.onrender.com/me/update", {
     method: "post",
     headers: {
       "content-type": "application/json",
@@ -175,7 +178,7 @@ export async function updateUser(userData, token, id) {
 }
 
 export async function deletePet(id, token) {
-  const res = await fetch("https://dwf-m7-final.herokuapp.com/pets/" + id, {
+  const res = await fetch("https://pet-finder-app.onrender.com/pets/" + id, {
     method: "delete",
     headers: {
       "content-type": "application/json",

@@ -18,7 +18,7 @@ export function PetReportCard(props){
   }, [props.show]);
 
   async function SendEmail(emailData) {
-    const res = await fetch("https://dwf-m7-final.herokuapp.com/send", {
+    const res = await fetch("https://pet-finder-app.onrender.com/send", {
               method: "post",
               headers: {
                 "content-type": "application/json",
