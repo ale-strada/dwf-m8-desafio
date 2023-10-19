@@ -7,14 +7,11 @@ import { SignupForm } from "components/SignUp&EditForm";
 
 export function Signup(){
 const token = useRecoilValue(tokenState)
- 
 const titleEntrar = "Registrarme"
 const titleMisDatos = "Mis Datos"
 
   return <div className={css.root}>
             <Title>{token? titleMisDatos:titleEntrar}</Title>
             <SignupForm/>         
-         </div>    
+          </div>    
 };
-
-

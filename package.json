@@ -28,7 +28,8 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack",
     "build": "cross-env NODE_ENV=production webpack",
-    "start": "live-server"
+    "start": "live-server",
+    "vercel-build": "npm run build"
   },
   "devDependencies": {
     "@types/react-dom": "^18.0.6",
