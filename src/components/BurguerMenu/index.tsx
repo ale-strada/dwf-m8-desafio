@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom"
 import css from "./index.css"
 import {IconoMisDatos, IconoMisMascotas, IconoReportar} from "../../img/iconos"
@@ -14,7 +14,10 @@ const userData:any = useRecoilValue(userDataState)
 const [displayMenu, setDisplayMenu] = useState(false)
 const userEmail = userData.email
 
-
+// controla el texto del boton para iniciar/cerrar sesion
+useEffect(()=>{
+  setSesion(token? "cerrar sesion": "iniciar sesion")
+}, [token])
 
 function handleClick(){
   displayMenu? setDisplayMenu(false): setDisplayMenu(true)
@@ -23,13 +26,13 @@ function handleClick(){
 
 function handleCerrarSesion(){
   if(token === ""){
-    setSesion("cerrar sesion")
+    
     navigate("/login",{replace:true})
     setDisplayMenu(false)
   }else{
-    setSesion("iniciar sesion")
+    
     setToken("")
-    localStorage.setItem("token","")
+    sessionStorage.setItem("token","")
     location.reload()
     setDisplayMenu(false)
   }
@@ -90,7 +93,7 @@ const menuStyle = displayMenu? {display:"inherit"}:{display:""}
             </div>   
             <div className={css.header__user_menu}>
               <p className={css.header__user_menu_usermail}>{userEmail}</p> 
-              <div className={css.button_box}>
+              <div className={css.button_box_user_session}>
                <button onClick={handleCerrarSesion} className={css.header__user_menu_cerrarsesion}>{sesion}</button> 
               </div> 
             </div>  

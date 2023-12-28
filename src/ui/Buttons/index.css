@@ -32,6 +32,11 @@
     font-weight: 700;
     font-size: 16px;
     color: #FFFFFF;
+    cursor: pointer;
+}
+.form_button:hover{
+    background: #a6aef5;
+    color: #575555;
 }
 
 .naranja{

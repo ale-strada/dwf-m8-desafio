@@ -97,12 +97,17 @@
       font-size: 18px;
     }    
   }
+
   .header__menuopcion{
     display: flex;
     padding: 30px 10px;
     border-top: solid 1px white;
     width: 100%;
-    }
+  }
+  .header__menuopcion :hover{
+    color: #2e2928;
+    font-weight: bold;
+  }
   .header__user_menu{
     display: flex;
     flex-direction: column;
@@ -152,6 +157,16 @@
     
   }
   .button_box :hover{
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+    /* padding: 5px; */
+    color: #2e2928;
+    cursor: pointer;
+  }
+
+  .button_box_user_session :hover{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 5px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background: #665943;
+    cursor: pointer;
   }
