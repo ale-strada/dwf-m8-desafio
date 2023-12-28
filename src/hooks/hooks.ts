@@ -85,6 +85,7 @@ export const getUserToken = selector({
 });
 export function loadLocalToken() {
 	const [token, setToken] = useRecoilState(tokenState);
+	// cambio a session para evitar demoras con la DB users
 	const localToken = sessionStorage.getItem("token");
 	useEffect(() => {
 		setToken(localToken);
