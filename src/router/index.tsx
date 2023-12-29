@@ -8,6 +8,7 @@ import { Signup } from "pages/Signup";
 import { Post } from "pages/Post";
 import { MyPets } from "pages/MyPets";
 import { EditPet } from "pages/EditPet";
+import {Load} from "pages/Load"
 
 function AppRoutes() {
     return (
@@ -23,6 +24,7 @@ function AppRoutes() {
                 <Route path="/mypets" element={<MyPets/>} />
                 <Route path="/edit" element={<EditPet/>} />
                 <Route path="/edit/:lat,:lng" element={<EditPet/>} />
+                <Route path="/load" element={<Load/>} />
             </Route>
         </Routes>
     )

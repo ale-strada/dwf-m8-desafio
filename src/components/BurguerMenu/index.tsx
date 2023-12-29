@@ -25,7 +25,7 @@ function handleClick(){
 }
 
 function handleCerrarSesion(){
-  if(token === ""){
+  if(!token){
     
     navigate("/login",{replace:true})
     setDisplayMenu(false)
@@ -38,7 +38,7 @@ function handleCerrarSesion(){
   }
 }
 function handleClickMisDatos(){
-  if(token === ""){
+  if(!token){
     navigate("/login",{replace:true})
     setDisplayMenu(false)
   }else{
@@ -47,7 +47,7 @@ function handleClickMisDatos(){
   }
 }
 function handleClickMisMascotas(){
-  if(token === ""){
+  if(!token){
     navigate("/login",{replace:true})
     setDisplayMenu(false)
   }else{
@@ -56,7 +56,7 @@ function handleClickMisMascotas(){
   }
 }
 function handleClickReportar(){
-  if(token === ""){
+  if(!token){
     navigate("/login",{replace:true})
     setDisplayMenu(false)
   }else{

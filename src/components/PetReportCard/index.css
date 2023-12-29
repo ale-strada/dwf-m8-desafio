@@ -130,6 +130,12 @@
   margin: 20px auto;
 }
 
+.button:hover{
+  background: #ec694e;
+  color: #111111;
+  border: none;
+}
+
 .p{
   font-family: 'Roboto';
   font-style: normal;

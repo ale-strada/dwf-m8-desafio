@@ -12,6 +12,13 @@
     width: 340px;
     height: 50px;
     margin: 50px;
+    cursor: pointer;
+}
+
+.root:hover{
+    background: #e6ba75;
+    color: #575555;
+    border: none;
 }
 
 @media (min-width: 900px) {
@@ -52,6 +59,11 @@
     font-size: 16px;
     color: #FFFFFF;
 }
+.naranja:hover{
+    background: #e6ba75;
+    color: #575555;
+    border: none;
+}
 
 .gris{
     margin-top: 20px;
@@ -65,4 +77,10 @@
     font-weight: 700;
     font-size: 16px;
     color: #FFFFFF;
+}
+
+.gris:hover{
+    background: #3d3e47;
+    /* color: #575555; */
+    border: none;
 }

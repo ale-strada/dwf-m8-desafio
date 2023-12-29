@@ -10,3 +10,20 @@
       margin: 100px;
     }
     }
+
+    .perrito_container {
+      animation: shake 1s ease-in-out 2;
+      transform-origin: center;
+    }
+    
+    @keyframes shake {
+      0% {
+        transform: rotateZ(-5deg);
+      }
+      50% {
+        transform: rotateZ(5deg);
+      }
+      100% {
+        transform: rotateZ(-5deg);
+      }
+    }

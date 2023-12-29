@@ -17,7 +17,7 @@ export function MyPetCard (props:petProps) {
   const [petEdit, setPetEdit] = useRecoilState(petEditState)
   const navigate = useNavigate()
   function handleEditarClick(){
-   console.log("Editar");
+   
    setPetEdit({
     petName:props.petName,
     ubication:props.ubication,

@@ -26,4 +26,10 @@
     font-weight: 700;
     font-size: 16px;
     color: #FFFFFF;
+    cursor: pointer;
+}
+.button:hover{
+    background: #ec694e;
+    color: #111111;
+    border: none;
 }

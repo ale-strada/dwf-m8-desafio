@@ -17,7 +17,9 @@ function Home () {
     return (
           <div className={css.root}>
            <Title>Consigue ayuda, ayuda a otros</Title>
+           <div className={css.perrito_container}>
            <Perrito />
+           </div>
            <MainButton onClicked={handleClick}>Mostrar mascotas</MainButton>
           </div>
         )

@@ -22,9 +22,9 @@ function PetsNearCard (props:petProps) {
 
   function handleInformationClick(){
     MySwal.fire({
-      showCloseButton:true,
+      // showCloseButton:true,
       showConfirmButton:false,
-      closeButtonHtml:<ButtonCerrarAzul/>,
+      // closeButtonHtml:<ButtonCerrarAzul/>,
       width:300,
       background:"#FFF8ED",
       customClass:{
@@ -32,6 +32,7 @@ function PetsNearCard (props:petProps) {
         popup:css.conteiner},
       text:"algo",
       html:<PetInfoCard petName={props.petName} description={props.description} ubication={props.ubication} />,
+      focusCancel:false,
      })
     }
   const [visibility, setVisibility] = useState(false);
@@ -48,7 +49,7 @@ function PetsNearCard (props:petProps) {
    
   return (
         <div className={css.pet__box}>
-            <img className={css.pet__foto} src={props.pictureURL}/>
+          <img className={css.pet__foto} src={props.pictureURL}/>
             <div className={css.pet__box_description}>
                 <div className={css.box}>
                     <h3 className={css.pet__titulo_name}>{props.petName}</h3>
