@@ -27,3 +27,8 @@
         transform: rotateZ(-5deg);
       }
     }
+
+    .perrito_container:hover {
+      animation: shake 1s infinite;
+      scale: 1.1;
+    }
