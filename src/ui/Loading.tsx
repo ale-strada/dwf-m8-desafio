@@ -3,7 +3,6 @@ import {RotatingLines} from 'react-loader-spinner'
 import css from "../pages/login.css"
 
 export function Loading() {
-    console.log("Loading");
     
   return <div style={{
                 position:"absolute", 

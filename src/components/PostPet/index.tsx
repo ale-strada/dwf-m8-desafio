@@ -20,6 +20,8 @@ export function PostPet(){
     const navigate = useNavigate()
     const [petLoc, setPetLoc] = useRecoilState(petGeoLocState)
     const [pictureURL, setPictreURL] = useRecoilState(pictureURLState)
+    const [petName, setPetName] = useState("")
+    const [isShowInput, setIsShowInput] = useState(true)
 
     const [submited, setSubmited] = useState(true)
     function handleClickUbicacion(){
@@ -30,12 +32,24 @@ export function PostPet(){
             navigate("/post/"+ userLoc,{replace:true}) 
           })
     }
-  
+
+    function handleOptionClick (){
+        const name = "Sin nombre ( mascota encontrada )"
+        setIsShowInput(!isShowInput)
+        if (isShowInput){
+            setPetName(name)
+        } else {
+            setPetName(null)
+            var inputElement = document.getElementById('petNameInput') as HTMLInputElement;
+            inputElement.value = "";
+        }
+    }
+    
     function handleSubmit(e){
         e.preventDefault()
         setSubmited (true)
         const petData = {
-            petName:e.target.petName.value,
+            petName: isShowInput ? petName : e.target.petName.value,
             ubication:e.target.ubication.value,
             description:e.target.description.value,
             lng:petLoc[0],
@@ -66,9 +80,19 @@ export function PostPet(){
         }
         
     }
+
+    // VER LA FORMA DE PONER EL CAMPO NAME EN VACIO AL VOLVER A TOCAR EL BOTON DE "NO ES MI MASCOTA"
     return <div className={css.root}>
                 <form onSubmit={handleSubmit} className={css.form}>
-                    <TextFieldLabel name="petName" type="text" label="Nombre de la mascota" />
+                    <TextFieldLabel 
+                        id="petNameInput"
+                        name="petName" 
+                        type="text" 
+                        label="Nombre de la mascota" 
+                        option="No es mi mascota, la encontré." 
+                        handleOptionClick={handleOptionClick}
+                        value = {petName ? petName : null}
+                        isShowInput={isShowInput}/>
                     <div className={css.dropzone}>
                         <Previews/>
                     </div>
@@ -78,5 +102,5 @@ export function PostPet(){
                     <TextFieldLabel name="description" textarea={true} label="Descripción" />
                     <FormButton>Publicar mascota</FormButton>
                 </form>
-           </div>
+            </div>
 }

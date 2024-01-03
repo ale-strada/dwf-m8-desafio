@@ -24,10 +24,37 @@
     padding: 10px;
   }
 
+  .input_none{
+    /* display: none; */
+    background: lightgrey;
+    border: none;
+    color: gray;
+    width: 340px;
+    height: 50px;
+    border-radius: 14px;
+    margin: 5px 0;
+    padding: 10px;
+    
+  }
+
   .textArea{
     width: 340px;
     height: 120px;
     border: 1px solid #F19F1F;
     border-radius: 14px;
     padding: 10px;
+  }
+
+  .option{
+    cursor: pointer;
+    align-self: auto;
+    color: #303def;
+    border: 1px solid #303def;
+    border-radius: 8px;
+    padding: 3px 10px;
+    text-align: center;
+  }
+  .option:hover{
+    background-color: #303def;
+    color: white;
   }

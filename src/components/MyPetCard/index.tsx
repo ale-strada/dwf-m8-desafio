@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { IconoUbication2 } from "img/iconos"
 import css from "./index.css"
 import {useNavigate} from "react-router-dom"
@@ -15,6 +15,7 @@ type petProps = {
 
 export function MyPetCard (props:petProps) {
   const [petEdit, setPetEdit] = useRecoilState(petEditState)
+  const [encontrada, setEncontrada] = useState(false)
   const navigate = useNavigate()
   function handleEditarClick(){
    
@@ -27,12 +28,29 @@ export function MyPetCard (props:petProps) {
    navigate("/edit",{replace:true}) 
   }
    
+    useEffect(()=>{
+        if(props.petName === "Sin nombre ( mascota encontrada )"){
+      console.log("encontrada", props);
+      setEncontrada(true)
+    }
+    },[props.petName])
+  
+      
   return (
         <div className={css.pet__box}>
+          {encontrada ? 
+          <div className= {css.pet__encontrada}>MASCOTA ENCONTRADA</div> 
+          : null }
             <img className={css.pet__foto} src={props.pictureURL}/>
             <div className={css.pet__box_description}>
                 <div className={css.box}>
-                    <h3 className={css.pet__titulo_name}>{props.petName}</h3>
+                    {encontrada ? <span className= {css.pet__span_email}>encontada por: 
+                      <h6 className={css.pet__titulo_email}>{props.email}</h6>
+                    </span> 
+                    :
+                    <h3 className={css.pet__titulo_name}>{ props.petName}</h3>
+                    }
+                    
                     <div className={css.pet__ubicacion}>
                       <IconoUbication2/>
                       <p className={css.pet__ubicacion_text}>{props.ubication}</p>
