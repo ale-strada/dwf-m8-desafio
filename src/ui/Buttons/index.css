@@ -1,7 +1,6 @@
 .root{
     background: #EF5030;
     border-radius: 14px;
-    border-radius: 14px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
@@ -16,9 +15,9 @@
 }
 
 .root:hover{
-    background: #e6ba75;
-    color: #575555;
-    border: none;
+    background: #FFFFFF;
+    color: #EF5030;
+    border-color: #EF5030;
 }
 
 @media (min-width: 900px) {
