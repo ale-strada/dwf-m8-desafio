@@ -7,6 +7,14 @@ export function PetReportCard(props){
   const [show, setShow] = useState(false);
   const [reportado, setReportado] = useState(false)
   const [sinDatos, setSinDatos] = useState(false)
+  const [encontrada, setEncontrada] = useState(false)
+
+  useEffect(()=>{
+    if(props.petName === "Sin nombre ( mascota encontrada )"){
+  console.log("encontrada", props);
+  setEncontrada(true)
+}
+},[props.petName])
   const closeHandler = (e) => {
     setShow(false);
     props.onClose(false);
@@ -67,7 +75,15 @@ export function PetReportCard(props){
                         </div>;
 
    const formReportar = <div className={css.box}>
-                            <h3 className={css.h3}>Reportar info de {props.petName}</h3>
+                            {encontrada ? 
+                              <div style={{marginBottom:"10px"}}>
+                                <h3 className={css.h3} style={{marginBottom:"5px"}}>Es tu mascota?</h3>
+                                <h6 className={css.p}>Solicita informacion para recuperarla</h6>
+                              </div>
+                            : 
+                              <h3 className={css.h3}>Reportar info de {props.petName}</h3>
+                            }
+                            
                             <form onSubmit={handleSubmit} className={css.form}>
                                 <label className={css.label}>Tu nomber 
                                     <input className={css.input} type="text" name="nombre"/>

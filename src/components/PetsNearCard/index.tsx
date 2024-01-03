@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { ButtonCerrarAzul, IconoUbication2 } from "img/iconos"
 import css from "./index.css"
 import Swal from "sweetalert2"
@@ -36,11 +36,17 @@ function PetsNearCard (props:petProps) {
      })
     }
   const [visibility, setVisibility] = useState(false);
+  const [encontrada, setEncontrada] = useState(false)
+
+  useEffect(()=>{
+    if(props.petName === "Sin nombre ( mascota encontrada )"){
+  console.log("encontrada", props);
+  setEncontrada(true)
+}
+},[props.petName])
 
   function handleReportarClick(){
    setVisibility(!visibility)
-   
-   
   }
 
    const popupCloseHandler = (e:any) => {
@@ -49,10 +55,21 @@ function PetsNearCard (props:petProps) {
    
   return (
         <div className={css.pet__box}>
+          {encontrada ? 
+          <div className= {css.pet__encontrada}>ENCONTRE</div> 
+          : 
+          <div className= {css.pet__perdida}>PERDI A</div>
+          }
           <img className={css.pet__foto} src={props.pictureURL}/>
             <div className={css.pet__box_description}>
                 <div className={css.box}>
-                    <h3 className={css.pet__titulo_name}>{props.petName}</h3>
+                    {encontrada ? 
+                    <span className= {css.pet__span_email}>encontada por: 
+                      <h6 className={css.pet__titulo_email}>{props.email}</h6>
+                    </span> 
+                    :
+                    <h3 className={css.pet__titulo_name}>{ props.petName}</h3>
+                    }
                     <div className={css.pet__ubicacion}>
                       <IconoUbication2/>
                       <p className={css.pet__ubicacion_text}>{props.ubication}</p>
@@ -64,7 +81,12 @@ function PetsNearCard (props:petProps) {
                     <button onClick={handleInformationClick} className={css.button}>Informacion</button>
                   </div>
                   <div className={css.button_box}>
-                    <button onClick={handleReportarClick}className={css.button}>Reportar</button>
+                    {encontrada ?
+                      <button onClick={handleReportarClick}className={css.button}>Reclamar</button> 
+                      : 
+                      <button onClick={handleReportarClick}className={css.button}>Reportar</button>
+                    }
+                    
                   </div>
                   <PetReportCard onClose={popupCloseHandler} show={visibility} email={props.email} petName={props.petName}></PetReportCard>
                 </div>
