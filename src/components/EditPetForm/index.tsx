@@ -112,7 +112,7 @@ export function EditPetForm(){
                         <Mapa/>
                         <ButonColores naranja={true} onClicked={handleClickUbicacion}>Ir a mi ubicación aproximada</ButonColores>
                     </div>
-                    <TextFieldLabel onChange={handleChangeUbication} value ={ubication} name="ubication" type="text" label="Indica ciudad y provincia" />
+                    <TextFieldLabel onChange={handleChangeUbication} value ={ubication} name="ubication" type="text" label="Indica ciudad y provincia" isShowInput = {true} />
                     <TextFieldLabel onChange={handleChangeDescription} value ={description} name="description" textarea={true} label="Descripción" />
                     <button onClick={handleClick} className={css.button}>Actualizar información</button>
                 </form>

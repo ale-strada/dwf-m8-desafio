@@ -98,7 +98,7 @@ export function PostPet(){
                     </div>
                     <Mapa/>
                     <ButonColores naranja={true} onClicked={handleClickUbicacion}>Ir a mi ubicación aproximada</ButonColores>
-                    <TextFieldLabel name="ubication" type="text" label="Indica ciudad y provincia" />
+                    <TextFieldLabel name="ubication" type="text" label="Indica ciudad y provincia" isShowInput = {true}/>
                     <TextFieldLabel name="description" textarea={true} label="Descripción" />
                     <FormButton>Publicar mascota</FormButton>
                 </form>

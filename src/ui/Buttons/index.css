@@ -42,8 +42,8 @@
     cursor: pointer;
 }
 .form_button:hover{
-    background: #a6aef5;
-    color: #575555;
+    background: #FFFFFF;
+    color: #108896;
 }
 
 .naranja{
@@ -60,9 +60,9 @@
     color: #FFFFFF;
 }
 .naranja:hover{
-    background: #e6ba75;
-    color: #575555;
-    border: none;
+    background: #FFFFFF;
+    color: #F19F1F;
+    /* border: none; */
 }
 
 .gris{
@@ -80,7 +80,7 @@
 }
 
 .gris:hover{
-    background: #3d3e47;
-    /* color: #575555; */
-    border: none;
+    background: #FFFFFF;
+    color: #A1A0A0;
+    /* border: none; */
 }
